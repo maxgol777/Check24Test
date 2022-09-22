@@ -17,7 +17,6 @@ import javax.inject.Inject
 class ProductsViewModel @Inject constructor(
     private val repository: ProductsRepository
 ) : ViewModel() {
-
     var state by mutableStateOf(ScreenState())
         private set
 

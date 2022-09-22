@@ -18,7 +18,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.RootNavGraph
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.test.check24testapp.R
-import com.test.check24testapp.feature_products.presentation.screens.products.components.ProductRow
+import com.test.check24testapp.feature_products.presentation.screens.components.ProductRow
 import com.test.check24testapp.feature_products.presentation.util.Constants.FooterUrl
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")

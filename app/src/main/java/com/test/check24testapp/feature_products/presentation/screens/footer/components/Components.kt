@@ -1,4 +1,4 @@
-package com.example.newstestapp.feature_news.presentation.screens.detail.components
+package com.test.check24testapp.feature_products.presentation.screens.footer.components
 
 import android.annotation.SuppressLint
 import android.graphics.Bitmap

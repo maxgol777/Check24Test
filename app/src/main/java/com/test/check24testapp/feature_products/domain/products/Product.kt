@@ -1,5 +1,7 @@
 package com.test.check24testapp.feature_products.domain.products
 
+import java.io.Serializable
+
 data class Product(
     val available: Boolean,
     val color: String,
@@ -13,4 +15,4 @@ data class Product(
     val rating: Double,
     val releaseDate: Int,
     val type: String
-)
+) : Serializable

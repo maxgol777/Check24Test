@@ -1,4 +1,4 @@
-package com.test.check24testapp.feature_products.presentation.screens.products.components
+package com.test.check24testapp.feature_products.presentation.screens.components
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -19,19 +19,20 @@ import coil.request.ImageRequest
 import coil.transform.CircleCropTransformation
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.test.check24testapp.feature_products.domain.products.Product
+import com.test.check24testapp.feature_products.presentation.screens.destinations.DetailScreenDestination
 
 
 @Composable
 fun ProductRow(
     product: Product,
-    navController: DestinationsNavigator
+    navController: DestinationsNavigator? = null
 ) {
     Card(
         Modifier
             .fillMaxWidth()
             .padding(5.dp)
             .clickable {
-                //navController.navigate(DetailScreenDestination(article.url))
+                navController?.navigate(DetailScreenDestination(product))
             },
         shape = RoundedCornerShape(corner = CornerSize(3.dp)),
         elevation = 5.dp

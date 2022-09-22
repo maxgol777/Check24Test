@@ -8,7 +8,7 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.ui.Modifier
 import com.ramcosta.composedestinations.DestinationsNavHost
-import com.test.check24testapp.feature_products.presentation.screens.products.NavGraphs
+import com.test.check24testapp.feature_products.presentation.screens.NavGraphs
 import com.test.check24testapp.ui.theme.Check24TestAppTheme
 import dagger.hilt.android.AndroidEntryPoint
 

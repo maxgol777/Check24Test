@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Check24TestApp</string>
+    <string name="footer_message">© 2016 Check24</string>
 </resources>

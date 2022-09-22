@@ -31,7 +31,17 @@ class ProductsViewModel @Inject constructor(
 
     private suspend fun requestAction() {
         state = state.copy(isLoading = true)
-        request().mapCatching {
+        val result = request()
+
+        if (result.isFailure) {
+            state = ScreenState(
+                isLoading = false,
+                errorMessage = result.toString()
+            )
+            return
+        }
+
+        result.mapCatching {
             state = state.copy(
                 header = it.header,
                 items = it.products,
@@ -50,22 +60,13 @@ class ProductsViewModel @Inject constructor(
             requestAction()
         }
     }
-
-    fun createNewRequest() {
-        state = ScreenState()
-        request = { repository.getProducts() }
-        loadItems()
-    }
-
-    companion object {
-        const val DEFAULT_PAGE_SIZE = 10
-    }
 }
 
 data class ScreenState(
     val isLoading: Boolean = false,
     val header: Header = Header("", ""),
     val items: List<Product> = emptyList(),
+    val errorMessage: String? = null,
     val filter: Filter = Filter1
 )
 

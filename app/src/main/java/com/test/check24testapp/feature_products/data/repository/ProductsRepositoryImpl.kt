@@ -12,7 +12,7 @@ class ProductsRepositoryImpl @Inject constructor(private val api: ProductsApi) :
         val articles = api.getProducts().toProducts()
         Result.success(articles)
     } catch (exception: Exception) {
-        Log.d(TAG, "getNews: $exception")
+        Log.d(TAG, "Error: $exception")
         Result.failure(exception)
     }
 

@@ -21,9 +21,7 @@ import com.test.check24testapp.feature_products.presentation.screens.components.
 
 fun DetailScreen(
     product: Product? = null,
-    detailedViewModel: DetailViewModel = hiltViewModel<DetailViewModel>().apply {
-        this.product = product
-    },
+    detailedViewModel: DetailViewModel = hiltViewModel()
 ) {
     product?.let {
         val scaffoldState = rememberScaffoldState()

@@ -4,17 +4,20 @@ import android.content.SharedPreferences
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import com.test.check24testapp.feature_products.domain.products.Product
+import com.test.check24testapp.feature_products.presentation.screens.destinations.DetailScreenDestination
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 
 @HiltViewModel
 class DetailViewModel @Inject constructor(
+    savedStateHandle: SavedStateHandle,
     private val preferences: SharedPreferences
 ) : ViewModel() {
-    var product: Product? = null
+    private var product = DetailScreenDestination.argsFrom(savedStateHandle).product
     private val favoriteProducts = HashSet<String>()
     var state by mutableStateOf(DetailedScreenState())
         private set
